@@ -1,6 +1,19 @@
 from packages.divar_scaper import url_scaper
 from packages.mongo_database import seve_data_to_mongodb, print_data_from_mongodb
 
+class Scaper:
+    def __init__(self,mainurl):
+        self.URL = mainurl
+
+    def seve_to_database(self,item_dict, collection_name):
+        seve_data_to_mongodb(item_dict, collection_name)
+
+    def show_from_database(self, db_name, collection_name):
+        print_data_from_mongodb(db_name, collection_name)
+    def just_show(self):
+        items = (url_scaper(self.URL))
+        print(items)
+
 def to_do(u):
     n = True
 
@@ -21,22 +34,7 @@ def to_do(u):
         elif to_do == '5':
             break
 
-
-class Scaper:
-    def __init__(self,mainurl):
-        self.URL = mainurl
-
-    def seve_to_database(self,item_dict, collection_name):
-        seve_data_to_mongodb(item_dict, collection_name)
-
-    def show_from_database(self, db_name, collection_name):
-        print_data_from_mongodb(db_name, collection_name)
-    def just_show(self):
-        items = (url_scaper(self.URL))
-        print(items)
-
-print ('----wellcom to divar scaper----')
-
-main_url = input("Enter Address To Be Scaper : ")
-
-to_do(main_url)
+if __name__ == "__main__":
+    print ('----wellcom to divar scaper----')
+    main_url = input("Enter Address To Be Scaper : ")
+    to_do(main_url)

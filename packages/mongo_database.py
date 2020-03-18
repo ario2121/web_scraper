@@ -10,11 +10,7 @@ def seve_data_to_mongodb(item_dict,collection_name):
     mycol = mydb[collection_name]
 
     counter = 0
-    # print(myclient.list_database_names())
-
-    # my_len_dict = len(scaper_dict)
-    # my_value_dict = scaper_dict.values()
-
+    
     #لیستی از کلید های دیکشنری که همان اسم کالاها می باشد
     my_index_dict = scaper_dict.keys()
 
@@ -35,15 +31,6 @@ def seve_data_to_mongodb(item_dict,collection_name):
             print('Add {} to database'.format(i))
             counter +=1
     print("Total add {} items.".format(counter))
-    # for x in mycol.find():
-    #     print(x)
-    # for i in my_index_dict:
-    #     dic = {'name' : i, 'details' : scaper_dict[i],'data':datetime.datetime.utcnow()}
-    #     x=mycol.insert_one(dic)
-    
-    # z=mycol.remove()
-# di = {'12اتاق اورال ارتشی': [{'تلفن': '۰۹۱۹۱۱۵xxxxکپی', 'دسته\u200cبندی': 'قطعات یدکی و لوازم جانبی خودرو', 'محل': 'تهران، افسریه', 'نوع آگهی': 'فروشی', 'قیمت': 'توافقی'}], 'پمپ هیدرولیک12  آوانته': [{'تلفن': '۰۹۱۹۲۴۳xxxxکپی', 'دسته\u200cبندی': 'قطعات یدکی و لوازم جانبی خودرو', 'محل': 'تهران، تهرانپارس شرقی', 'نوع آگهی': 'فروشی', 'قیمت': '۸۰۰٫۰۰۰ تومان'}], 'روکش صندلی چرم و مخمل پرشیا (اکبند)': [{'تلفن': '۰۹۱۰۵۵۸xxxxکپی', 'دسته\u200cبندی': 'قطعات یدکی و لوازم جانبی خودرو', 'محل': 'تهران، نعمت\u200cآباد', 'نوع آگهی': 'فروشی', 'قیمت': 'توافقی'}], 'لاستیک بریدجستون crm': [{'تلفن': '۰۹۳۰۲۷۷xxxxکپی', 'دسته\u200cبندی': 'موتورسیکلت و لوازم جانبی', 'محل': 'تهران، آجودانیه', 'نوع آگهی': 'فروشی', 'برند': 'هوندا CRM 250', 'سال ساخت': '۱۳۹۵', 'قیمت': '۱٫۵۰۰٫۰۰۰ تومان', 'کارکرد': '۱۲۳'}], 'پایونر  6986 اصلی': [{'تلفن': '۰۹۱۲۷۰۷xxxxکپی', 'دسته\u200cبندی': 'قطعات یدکی و لوازم جانبی خودرو', 'محل': 'تهران، آذری', 'نوع آگهی': 'فروشی', 'قیمت': '۶۸۰٫۰۰۰ تومان'}]}
-# seve_data_to_mongodb(di)
 
 def print_data_from_mongodb(db_name,collection_name):
 
