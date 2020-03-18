@@ -5,7 +5,6 @@ def to_do(u):
     n = True
 
     while(n == True):
-        print('You are in {} category !'.format(u))
         item = Scaper(u)
         to_do = input("What to do inside category? \n1:print new data  \n2:print data from data base \n3:save data to database\n4:back to main menu\n5:Exit\n>>>")
         if to_do == '1':
@@ -19,11 +18,9 @@ def to_do(u):
             pass
         elif to_do == '4' :
             pass
+        elif to_do == '5':
+            break
 
-
-
-
-    
 
 class Scaper:
     def __init__(self,mainurl):
@@ -39,22 +36,7 @@ class Scaper:
         print(items)
 
 print ('----wellcom to divar scaper----')
-all_page_dict = {'':'', 'real_estate':'real-estate', 'buy_residential':'buy-residential', 'buy_apartment':'buy-apartment', 'buy_villa':'buy-villa', 'buy_old_house':'buy-old-house','rent_residential':'rent-residential', 'rent_apartment':'rent-apartment', 'rent_villa':'rent-villa'}
-all_town_dict = {'tehran':'tehran', 'ahvaz':'ahvaz'}
-get_town = input("Enter Address To Be Scaper : ")
-get_category = input("Enter Category : ")
-mian_url = 'https://divar.ir/s/{}/{}'.format(all_town_dict[get_town], all_page_dict[get_category])
 
-print(mian_url)
-# to_do(get_address)
+main_url = input("Enter Address To Be Scaper : ")
 
-
-
-# #get data from site
-# items = (url_scaper('https://divar.ir/s/tehran/vehicles'))
-
-# #save data to database this get dictionary and collection nmae
-# seve_data_to_mongodb(item_dict = items , collection_name = 'boz')
-
-# #print data from database this get database name and collection nmae
-# print_data_from_mongodb(db_name='mydatabase', collection_name='boz')
+to_do(main_url)
